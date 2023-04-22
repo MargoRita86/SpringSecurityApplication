@@ -1,5 +1,4 @@
 package com.example.springsecurityapplication.services;
-
 import com.example.springsecurityapplication.models.Category;
 import com.example.springsecurityapplication.models.Product;
 import com.example.springsecurityapplication.repositories.ProductRepository;
@@ -8,7 +7,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
-
 @Service
 @Transactional(readOnly = true)
 public class ProductService {
@@ -28,7 +26,6 @@ public class ProductService {
         Optional<Product> optionalProduct = productRepository.findById(id);
         return optionalProduct.orElse(null);
     }
-
     // Данный метод позволяет сохранить товар
     @Transactional
     public void saveProduct(Product product, Category category){
@@ -42,7 +39,6 @@ public class ProductService {
         product.setId(id);
         productRepository.save(product);
     }
-
     // Данный метод позволяет удалить товар по id
     @Transactional
     public void deleteProduct(int id){

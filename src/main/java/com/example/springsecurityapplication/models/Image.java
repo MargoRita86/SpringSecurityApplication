@@ -1,5 +1,4 @@
 package com.example.springsecurityapplication.models;
-
 import jakarta.persistence.*;
 
 @Entity
@@ -19,7 +18,6 @@ public class Image {
         this.fileName = fileName;
         this.product = product;
     }
-
     public Image() {
 
     }
@@ -35,7 +33,6 @@ public class Image {
     public String getFileName() {
         return fileName;
     }
-
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }

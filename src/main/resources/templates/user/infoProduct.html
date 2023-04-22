@@ -3,24 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Информация о товаре</title>
-    <link th:href="@{/css/index.css}" type="text/css" rel="stylesheet">
+    <link th:href="@{/css/infoProduct.css}" type="text/css" rel="stylesheet">
 
 </head>
 <body>
-
-<h3>Информация о товаре: </h3>
-<br>
-<div class="description">
-  <p th:text="'Наименование: ' + ${product.getTitle()}" class="name"></p>
-  <p th:text="'Описание: ' + ${product.getDescription()}"></p>
-  <p th:text="'Цена: ' + ${product.getPrice()}"></p>
-  <p th:text="'Cклад: ' + ${product.getWarehouse()}"></p>
-  <p th:text="'Продавец: ' + ${product.getSeller()}"></p>
-  <p th:text="'Категория: ' + ${product.getCategory().getName()}"></p>
+<div class="div">
+    <div class="container">
+        <h2>Информация о товаре: </h2>
+        <div class="contain">
+        <br>
+           <div>
+              <p th:text="'Наименование: ' + ${product.getTitle()}" class="name"></p>
+              <p th:text="'Описание: ' + ${product.getDescription()}"></p>
+              <p th:text="'Цена: ' + ${product.getPrice()} + ' рублей'"></p>
+              <p th:text="'Cклад: ' + ${product.getWarehouse()}"></p>
+              <p th:text="'Продавец: ' + ${product.getSeller()}"></p>
+              <p th:text="'Категория: ' + ${product.getCategory().getName()}"></p>
+           </div>
+           <div th:each="img : ${product.getImageList()}">
+              <img th:src="'/img/' + ${img.getFileName()}" class="imgProduct">
+           </div>
+        </div>
+    </div>
 </div>
-<div th:each="img : ${product.getImageList()}">
-    <img th:src="'/img/' + ${img.getFileName()}">
-</div>
-
 </body>
 </html>

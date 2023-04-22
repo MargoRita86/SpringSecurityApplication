@@ -1,8 +1,6 @@
 package com.example.springsecurityapplication.models;
-
 import com.example.springsecurityapplication.enumm.Status;
 import jakarta.persistence.*;
-
 import java.time.LocalDateTime;
 
 @Entity
@@ -11,7 +9,6 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
     private String number;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
@@ -30,7 +27,6 @@ public class Order {
     private void init(){
         dateTime = LocalDateTime.now();
     }
-
     public Order(String number, Product product, Person person, int count, float price, Status status) {
         this.number = number;
         this.product = product;

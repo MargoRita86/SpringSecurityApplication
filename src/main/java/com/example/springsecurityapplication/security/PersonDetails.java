@@ -1,17 +1,14 @@
 package com.example.springsecurityapplication.security;
-
 import com.example.springsecurityapplication.models.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import java.util.Collection;
 import java.util.Collections;
 
 public class PersonDetails implements UserDetails {
     private final Person person;
-
     public PersonDetails(Person person) {
         this.person = person;
     }
@@ -23,14 +20,10 @@ public class PersonDetails implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Collections.singletonList(new SimpleGrantedAuthority(person.getRole()));
     }
-
-
-
     @Override
     public String getPassword() {
         return this.person.getPassword();
     }
-
     @Override
     public String getUsername() {
         return this.person.getLogin();
@@ -53,7 +46,6 @@ public class PersonDetails implements UserDetails {
     public boolean isCredentialsNonExpired() {
         return true;
     }
-
     // Аккаунт активен
     @Override
     public boolean isEnabled() {

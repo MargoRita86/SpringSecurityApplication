@@ -78,25 +78,6 @@ a:hover {
 
 
 .submit {
-    margin: 10px 10px;
-    display: block;
-    color: white;
-    font-size: 13pt;
-    text-decoration: none;
-    padding: .5em 2em;
-    outline: none;
-    border-width: 2px 0;
-    border-style: solid none;
-    border-color: #FDBE33 #D2691E #D77206;
-    border-radius: 6px;
-    background: linear-gradient(#F3AE0F, #E38916) #E38916;
-    transition: 0.2s;
-    float: left;
-}
-.submit:hover { background: linear-gradient(#f5ae00, #f59500) #f5ae00; }
-.submit:active { background: linear-gradient(#f59500, #f5ae00) #f59500; }
-
-.submit_filter {
     margin: 10px auto;
     display: block;
     color: white;
@@ -111,8 +92,10 @@ a:hover {
     background: linear-gradient(#F3AE0F, #E38916) #E38916;
     transition: 0.2s;
 }
-.submit_filter:hover { background: linear-gradient(#f5ae00, #f59500) #f5ae00; }
-.submit_filter:active { background: linear-gradient(#f59500, #f5ae00) #f59500; }
+.submit:hover { background: linear-gradient(#f5ae00, #f59500) #f5ae00; }
+.submit:active { background: linear-gradient(#f59500, #f5ae00) #f59500; }
+
+
 
 .all_products{
     display: flex;
@@ -120,7 +103,7 @@ a:hover {
 }
 
 
-h3 {
+h3{
     color: #D2691E;
     text-align: center;
     width: 100%;
@@ -128,4 +111,4 @@ h3 {
 
 legend {
     color: #D2691E;
-}
+  }

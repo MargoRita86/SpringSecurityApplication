@@ -3,7 +3,6 @@ package com.example.springsecurityapplication.models;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
-
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;

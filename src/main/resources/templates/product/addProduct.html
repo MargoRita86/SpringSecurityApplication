@@ -3,54 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <title>Добавление товара</title>
-    <link th:href="@{/css/index.css}" type="text/css" rel="stylesheet">
+    <link th:href="@{/css/addProduct.css}" type="text/css" rel="stylesheet">
 </head>
 <body>
-<h3>Добавление товара</h3>
-<form th:method="POST" th:action="@{/admin/product/add}" th:object="${product}" enctype="multipart/form-data">
-    <label for="title">Введите наименование товара: </label>
-    <input type="text" th:field="*{title}" placeholder="Наименование" id="title">
-    <div style="color: red" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
-    <br>
-    <br>
-    <label for="description">Введите описание товара: </label>
-    <textarea th:field="*{description}" placeholder="Описание" id="description"></textarea>
-    <div style="color: red" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
-    <br>
-    <br>
-    <label for="price">Введите цену товара: </label>
-    <input type="number" th:field="*{price}" min="1" step="0.00" placeholder="Цена" id="price">
-    <div style="color: red" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></div>
-    <br>
-    <br>
-    <label for="warehouse">Введите cклад, на котором расположен товар: </label>
-    <input type="text" th:field="*{warehouse}" placeholder="Cклад" id="warehouse">
-    <div style="color: red" th:if="${#fields.hasErrors('warehouse')}" th:errors="*{warehouse}"></div>
-    <br>
-    <br>
-    <label for="category">Выберите категорию товара: </label>
-    <select name="category" th:field="*{category}" id="category">
-        <div th:each="element : ${category}">
-            <option th:text="${element.getName()}" th:value="${element.getId()}">
+<div class="div">
+    <div class="container">
+    <h2>Добавление товара</h2>
+        <div class="form">
+           <form th:method="POST" th:action="@{/admin/product/add}" th:object="${product}" enctype="multipart/form-data">
+              <label for="title">Введите наименование товара: </label>
+              <input type="text" th:field="*{title}" placeholder="Наименование" id="title"  class="input">
+              <div class="errors" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
+
+               <label for="description">Введите описание товара: </label>
+               <textarea th:field="*{description}" placeholder="Описание" id="description"  class="input"></textarea>
+               <div class="errors" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
+
+               <label for="price">Введите цену товара: </label>
+               <input type="number" th:field="*{price}" min="1" step="0.00" placeholder="Цена" id="price"  class="input">
+               <div class="errors" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></div>
+
+                <label for="warehouse">Введите cклад, на котором расположен товар: </label>
+                <input type="text" th:field="*{warehouse}" placeholder="Cклад" id="warehouse"  class="input">
+                <div class="errors" th:if="${#fields.hasErrors('warehouse')}" th:errors="*{warehouse}"></div>
+
+               <label for="seller">Введите данные о продавце: </label>
+               <textarea th:field="*{seller}" placeholder="Продавец" id="seller"  class="input"></textarea>
+               <div class="errors" th:if="${#fields.hasErrors('seller')}" th:errors="*{seller}"></div>
+
+
+               <label for="category">Выберите категорию товара: </label>
+               <select name="category" th:field="*{category}" id="category" jmn >
+                  <div th:each="element : ${category}">
+                       <option th:text="${element.getName()}" th:value="${element.getId()}">
+                  </div>
+               </select>
+
+               <div class="errors" th:if="${#fields.hasErrors('category')}" th:errors="*{category}"></div>
+
+               <p class="errors">Вы можете добавить до 5 фотографий. Первая фотография будет являтся главной при выводе карточки товара</p>
+               <input type="file" name="file_one" class="file">
+               <input type="file" name="file_two" class="file" >
+               <input type="file" name="file_three" class="file" >
+               <input type="file" name="file_four" class="file">
+               <input type="file" name="file_five" class="file">
+               <br>
+               <br>
+              <button class="submit">Добавить</button>
+
+           </form>
         </div>
-    </select>
-    <div style="color: red" th:if="${#fields.hasErrors('category')}" th:errors="*{category}"></div>
-    <br>
-    <br>
-    <label for="seller">Введите данные о продавце: </label>
-    <textarea th:field="*{seller}" placeholder="Продавец" id="seller"></textarea>
-    <div style="color: red" th:if="${#fields.hasErrors('seller')}" th:errors="*{seller}"></div>
-    <br>
-    <br>
-    <p style="color: red">Вы можете добавить до 5 фотографий. Первая фотография не может быть пустой т.к она будет являтся главной при выводе карточки товара</p>
-    <input type="file" name="file_one">
-    <input type="file" name="file_two">
-    <input type="file" name="file_three">
-    <input type="file" name="file_four">
-    <input type="file" name="file_five">
-    <br>
-    <br>
-    <input type="submit" value="Добавить">
-</form>
+        </div>
+</div>
 </body>
 </html>

@@ -1,0 +1,35 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto auto;
+    text-align: center;
+    width: 100%;
+}
+
+.contain {
+    width: 90%;
+}
+
+.imgItem{
+    border: 1px solid #E38916;
+    border-radius: 35px;
+    padding: 15px;
+    margin: 15px;
+    width: 250px;
+    height: 650px;
+    float: left;
+    align-self: center;
+}
+
+.imgItem:hover {
+    box-shadow: #D2691E 0px 0px 10px 0px;
+}
+
+h2 {
+    color: #E38916;
+    text-align: center;
+    width: 100%;
+}
+
+

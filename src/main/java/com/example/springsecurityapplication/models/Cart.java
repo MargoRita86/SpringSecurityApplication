@@ -1,5 +1,4 @@
 package com.example.springsecurityapplication.models;
-
 import jakarta.persistence.*;
 
 @Entity

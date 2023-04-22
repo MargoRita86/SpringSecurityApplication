@@ -17,7 +17,6 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class SecurityConfig{
     private final PersonDetailsService personDetailsService;
-
     @Bean
     public PasswordEncoder getPasswordEncode(){
         return new BCryptPasswordEncoder();
@@ -50,8 +49,6 @@ public class SecurityConfig{
     public SecurityConfig(PersonDetailsService personDetailsService) {
         this.personDetailsService = personDetailsService;
     }
-
-
 
     protected void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
         authenticationManagerBuilder.userDetailsService(personDetailsService)

@@ -135,7 +135,6 @@ public class MainController {
         model.addAttribute("value_price_ot", ot);
         model.addAttribute("value_price_do", Do);
         return "/product/product";
-
     }
 
     @GetMapping("/cart/add/{id}")
@@ -233,6 +232,4 @@ public class MainController {
         model.addAttribute("orders", orderList);
         return "/user/orders";
     }
-
-
 }

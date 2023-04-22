@@ -1,0 +1,45 @@
+
+h2 {
+    color: #E38916;
+    text-align: center;
+    width: 100%;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    display: flex;
+    margin: auto auto;
+    text-align: center;
+    width: 100%;
+}
+
+.contain {
+    padding: 15px;
+    margin: 20px;
+    width: 30%;
+    border: 1px solid #E38916;
+    border-radius: 35px;
+    padding: 15px;
+    margin: 15px;
+    width: 250px;
+    height: 650px;
+    float: left;
+    align-self: center;
+}
+
+.contain:hover {
+    box-shadow: #D2691E 0px 0px 10px 0px;
+}
+
+a {
+    display: grid;
+    margin: 10px auto;
+    color: #F4A460;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #D2691E;
+}

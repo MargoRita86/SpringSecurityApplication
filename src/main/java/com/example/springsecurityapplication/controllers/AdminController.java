@@ -122,7 +122,6 @@ public class AdminController {
         return "redirect:/admin";
     }
 
-
     @GetMapping("/admin")
     public String admin(Model model)
     {
@@ -141,7 +140,6 @@ public class AdminController {
         model.addAttribute("product", productService.getProductId(id));
         model.addAttribute("category", categoryRepository.findAll());
         return "product/editProduct";
-
 
     }
 
